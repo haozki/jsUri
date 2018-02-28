@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jsUri Sample</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="jsUri.js"></script>
+    <style>
+    body {
+        background-color: #eeeeee;
+        font-family:"Lucida Grande",Verdana,Arial,"Bitstream Vera Sans",sans-serif;
+        font-size:11px;
+    }
+    </style>
+</head>
+<body>
+<h1>输出在Firebug控制台中查看</h1>
+
+<script type="text/javascript">
+    var url = 'http://usr:pwd@www.test.com:81/dir/dir.2/index.htm?key=queryString&test1&test2=value#top';
+    var URI = jsUri(url);
+    
+    console.info(URI);
+</script>
+<h2>URL中的查询串:</h2>
+<script type="text/javascript">
+    for(i in URI.queryKey){
+        document.writeln(i +' : '+URI.queryKey[i]+'<br>');
+    }
+</script>
+</body>
+</html>
